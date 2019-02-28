@@ -1,6 +1,9 @@
 {
     "name": "og-image",
-    "alias": "caarlos0-og-img.now.sh",
+    "alias": [
+      "caarlos0-og-img.now.sh",
+      "og.caarlos0.dev"
+    ],
     "version": 2,
     "regions": ["all"],
     "public": true,
