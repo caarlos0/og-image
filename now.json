@@ -1,17 +1,18 @@
 {
-    "name": "og-image",
-    "alias": [
-      "caarlos0-og-img.now.sh",
-      "og.caarlos0.dev"
-    ],
-    "version": 2,
-    "regions": ["all"],
-    "public": true,
-    "builds": [
-        { "src": "index.html", "use": "@now/static" },
-        { "src": "src/card.ts", "use": "@now/node@canary", "config": { "maxLambdaSize": "36mb" } }
-    ],
-    "routes": [
-        { "src": "/(.+)", "dest": "/src/card.ts" }
-    ]
+	"name": "og-image",
+	"alias": [
+		"caarlos0-og-img.now.sh",
+		"og.caarlos0.dev"
+	],
+	"public": true,
+	"version": 2,
+	"functions": {
+		"api/**": {
+			"memory": 3008
+		}
+	},
+	"rewrites": [{
+		"source": "/(.+)",
+		"destination": "/api"
+	}]
 }
